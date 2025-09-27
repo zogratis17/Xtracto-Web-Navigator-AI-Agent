@@ -13,37 +13,44 @@ The increasing complexity of web-based tasks and the need for automation in ever
 ## 🚀 Solution Overview
 
 ### Proposed Approach
-We propose building a **Web Navigator AI Agent** as a **browser extension** that connects directly to a **local LLM (Ollama)** through a lightweight backend running inside Docker.  
-The extension acts as a bridge between the browser (DOM/page control) and the LLM, enabling natural language instructions to be executed as real browser actions.  
+We propose building a **Browser–LLM Bridge Extension** that connects directly to a **local LLM (Ollama)** through a lightweight backend running inside Docker.  
+The extension acts as a bridge between the browser (web page + DOM control) and the LLM, enabling natural language instructions to be executed as real browser actions.  
 Context and internet knowledge will be enhanced using **web tooling** + **FAISS vector DB (RAG)**, while chat history and threads are persisted in a local database.
+
+---
 
 ## 🔑 Key Features / Modules
 
 1. **Instruction Parsing & Reasoning**  
    - Local LLM (Ollama with models like Llama 3, Qwen, etc.)  
-   - Converts natural language → step-by-step browser actions  
+   - Converts natural language → multi-step browser action plans  
 
 2. **Extension Control Layer**  
-   - Chrome/Firefox extension to directly control DOM elements (click, type, scrape, extract data)  
-   - Toggle **ON/OFF switch** for activating/deactivating the agent  
-   - Supports multiple threads (separate chat sessions per task)  
+   - Chrome/Firefox extension as the control point  
+   - Uses APIs like `chrome.tabs`, `chrome.scripting`, `chrome.debugger` for browser control  
+   - Page interaction: navigate, click, type, extract DOM data  
+   - Toggle **ON/OFF switch** to enable/disable AI agent  
+   - Supports multiple threads (chat sessions per task)  
 
 3. **Backend Orchestration (Dockerized)**  
-   - FastAPI (Python) or Express.js (Node.js) backend containerized with Docker  
-   - Acts as bridge between extension ↔ Ollama LLM ↔ FAISS DB  
-   - Provides REST/WebSocket endpoints on a local port for communication  
+   - FastAPI (Python) or Express.js (Node.js) backend inside Docker  
+   - Bridge between extension ↔ Ollama ↔ FAISS DB  
+   - REST/WebSocket endpoints over a local port for communication  
 
 4. **Search & RAG (Retrieval-Augmented Generation)**  
-   - Use web scraping + APIs for live data retrieval  
-   - FAISS as vector DB for context storage and similarity search  
-   - Injects relevant knowledge back into the LLM’s reasoning loop  
+   - Web scraping + API calls to fetch live data  
+   - **Hybrid RAG:** combine local LLM reasoning with real-time internet content  
+   - FAISS vector DB for knowledge storage and semantic search  
+   - Inject relevant retrieved knowledge into LLM’s responses  
 
 5. **Memory & Context Management**  
-   - Local DB (MongoDB / SQLite) for chat persistence and thread management  
-   - Stores history, visited sites, and task-specific data  
-   - Context recall across sessions (e.g., “continue from last search”)  
+   - Local DB (MongoDB / IndexedDB / SQLite) for chat persistence  
+   - Stores history, visited sites, and session-specific data  
+   - Thread-based memory for switching contexts  
+   - Contextual AI: LLM gets real-time browser/page state to improve accuracy  
 
 6. **User Experience (UX)**  
-   - Browser extension popup UI for interacting with the LLM  
-   - Switch between threads (conversations/tasks) seamlessly  
-   - Results displayed in structured format (lists, tables, summaries)  
+   - Extension popup UI for interacting with the LLM  
+   - Easy thread switching between different conversations/tasks  
+   - Results displayed as structured outputs (lists, tables, summaries)  
+   - User-centric controls for privacy and chat data management  
