@@ -26,3 +26,9 @@ Develop a fully local AI agent that can understand user instructions via a Local
 - Storage Layer (VectorDB + Local DB)
 - Task Memory & Reasoning Module
 - Voice Input Handler (Optional)
+
+## c) System Architecture
+
+🔹 **Architecture Diagram:**
+![architecture](assets/Architecture.png)
+
