@@ -13,7 +13,7 @@ This document outlines how our team collaborated to design and build the project
 | **Vijesh** | LLM Specialist | - Configured and optimized **Ollama** (and alternative local LLMs).<br>- Designed prompt strategies for multi-step reasoning.<br>- Implemented error handling for ambiguous tasks.<br>- Ensured accurate structured outputs.<br>- Documented LLM usage and configuration tips. |
 | **Madhu Shankara G S** | Backend Developer | - Built FastAPI backend for LLM ↔ Browser ↔ Extension communication.<br>- Integrated Playwright for automation and scraping.<br>- Developed pipelines for structured data extraction.<br>- Added error handling, retries, and backend logging.<br>- Wrote tests for backend stability and scalability. |
 | **Sudharsan** | Frontend Developer | - Built extension UI with toggles, session management, and chat view.<br>- Connected frontend to backend APIs.<br>- Designed clean UX for result visualization.<br>- Implemented responsive and minimal design.<br>- Handled state management for switching sessions/threads. |
-| **Vellayudham** | Research & Systems Engineer | - Researched tooling for **Docker virtualization**, vector DBs (FAISS), and local DB storage.<br>- Configured deployment setups for offline-first operation.<br>- Built local storage integration for chat history.<br>- Explored innovation points for future scaling (multi-agent, cloud/offline sync). |
+| **Velayutham** | Research & Systems Engineer | - Researched tooling for **Docker virtualization**, vector DBs (FAISS), and local DB storage.<br>- Configured deployment setups for offline-first operation.<br>- Built local storage integration for chat history.<br>- Explored innovation points for future scaling (multi-agent, cloud/offline sync). |
 
 
 ## ⚡ How We Worked  
