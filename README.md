@@ -62,6 +62,24 @@ Develop a fully local AI agent that can understand user instructions via a Local
 - GPT4All
 - LangChain (Optional)
 
+## e) Algorithms & Models
+
+🔹 **Algorithm(s) Chosen:**
+- Natural Language Parsing via Local LLM
+- Rule-based Planning & Action Mapping
+- DOM Tree Traversal for web scraping
+- Schema-based Validation for outputs
+
+🔹 **Reason for Choice:**
+- Local LLMs offer data privacy and offline capability.
+- Rule-based orchestration allows transparency and control.
+- HTML DOM traversal is robust across websites.
+- Guardrails + Pydantic enable strict output formats.
+
+🔹 **Model Training & Testing Approach:**
+- Pretrained LLMs (LLaMA/Mistral) via Ollama, fine-tuned on instruction datasets.
+- Few-shot prompting for zero-shot task parsing.
+- Manual evaluation and synthetic benchmarks for instruction handling accuracy.
 🔹 **APIs / Libraries:**
 - Playwright / Selenium / Puppeteer
 - BeautifulSoup / lxml / Playwright API
