@@ -17,10 +17,10 @@ Build an AI Agent that can take natural language instructions and autonomously d
 Develop a fully local AI agent that can understand user instructions via a Local LLM, control a browser to execute tasks (e.g., search, scrape, click), and return clean, structured outputs in JSON/CSV formats.
 
 🔹 **Key Features / Modules:**
-- User Interface (CLI / Web App / Extension)
-- Instruction Parser (LLM like Ollama / GPT4All)
-- Orchestration Engine (Python/Node.js)
-- Browser Automation (Playwright / Selenium)
+- User Interface (Extension)
+- Instruction Parser
+- Orchestration Engine
+- Browser Automation
 - HTML Parser & Extractor
 - Structured Output Formatter
 - Storage Layer (VectorDB + Local DB)
@@ -40,27 +40,24 @@ Develop a fully local AI agent that can understand user instructions via a Local
 5. Parser extracts relevant data.
 6. Output Layer structures and validates the result.
 7. Result is returned to user and stored locally.
-8. (Optional) VectorDB recalls previous tasks and context.
+8. (Future Upgrade) VectorDB recalls previous tasks and context.
 
 ## d) Technology Stack
 
 🔹 **Backend:**
-- Python with FastAPI or Node.js
-- LangChain / Custom Orchestrator
+- Python with FastAPI
+- Custom Orchestrator
 
 🔹 **Frontend:**
-- CLI (Typer)
-- Web App (React + Flask / Next.js + Express)
+- Web Extension (React + Flask)
 
 🔹 **Databases:**
-- Structured: SQLite / PostgreSQL
+- Structured: SQLite
 - Unstructured: JSON/CSV Files
-- Vector Storage: Chroma / Qdrant / Weaviate
+- Vector Storage: Chroma
 
 🔹 **ML/AI Frameworks:**
 - Ollama (LLaMA2 / Mistral)
-- GPT4All
-- LangChain (Optional)
 
 ## e) Algorithms & Models
 
@@ -82,11 +79,11 @@ Develop a fully local AI agent that can understand user instructions via a Local
 - Manual evaluation and synthetic benchmarks for instruction handling accuracy.
 
 🔹 **APIs / Libraries:**
-- Playwright / Selenium / Puppeteer
-- BeautifulSoup / lxml / Playwright API
+- Playwright
+- BeautifulSoup
 - Guardrails / Pydantic for validation
-- OpenAI Whisper or Vosk (Voice Input)
-- Pandas for CSV/JSON transformation
+- SpeechRecognition Module (Voice Input)
+- Pandas, Pydantic for CSV/JSON transformation
 
 ## f) Data Handling
 
@@ -103,15 +100,15 @@ Develop a fully local AI agent that can understand user instructions via a Local
 Structured results saved as:
 - CSV via Pandas
 - JSON via Pydantic schemas
-- Task history stored in SQLite or Postgres
+- Task history stored in SQLite
 - Task embeddings stored in VectorDB
 
 ## g) Implementation Plan
 
 🔹 **Initial Setup & Environment:**
-- Setup Python/Node environment
+- Setup Python environment
 - Install Ollama + Playwright
-- Initialize LLM models (e.g., Mistral via Ollama)
+- Initialize LLM models (LLaMA2 / Mistral via Ollama)
 
 🔹 **Core Module Development:**
 - LLM interface and instruction parsing
@@ -126,8 +123,8 @@ Structured results saved as:
 
 🔹 **Final Deployment-ready Build:**
 - Create executable (via PyInstaller / pkg)
-- Docker setup for portability
-- GUI or CLI toggle in settings
+- Docker setup for portability (future upgrade) 
+- Toggle on/off for the extension in settings
 - Export options (CSV, JSON)
 
 ## h) Performance & Validation
@@ -147,8 +144,8 @@ Structured results saved as:
 ## i) Deployment & Scalability
 
 🔹 **Deployment Plan:**
-- Local executable (for CLI/GUI)
-- Cross-platform packaging (Windows/Mac/Linux)
+- Browser Extension
+- Cross-browswer compatability
 - Docker container for isolated runs
 
 🔹 **Scalability Considerations:**
@@ -156,7 +153,7 @@ Structured results saved as:
 - Future support for:
   - Parallel browser sessions
   - Task queue & scheduler
-  - Multi-user support (if web-based)
+  - Multi-user support
 
 ## ✅ Conclusion
 
