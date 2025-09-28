@@ -1,6 +1,4 @@
-# AI Web Agent - Local Browser Automation
-
-📄 **Project Submission Document**
+# Xtracto - Web Navigator AI Agent
 
 ## a) Problem Statement Reference
 
