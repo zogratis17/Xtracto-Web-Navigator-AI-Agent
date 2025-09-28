@@ -80,9 +80,28 @@ Develop a fully local AI agent that can understand user instructions via a Local
 - Pretrained LLMs (LLaMA/Mistral) via Ollama, fine-tuned on instruction datasets.
 - Few-shot prompting for zero-shot task parsing.
 - Manual evaluation and synthetic benchmarks for instruction handling accuracy.
+
 🔹 **APIs / Libraries:**
 - Playwright / Selenium / Puppeteer
 - BeautifulSoup / lxml / Playwright API
 - Guardrails / Pydantic for validation
 - OpenAI Whisper or Vosk (Voice Input)
 - Pandas for CSV/JSON transformation
+
+## f) Data Handling
+
+🔹 **Data Sources Used:**
+- Real-time public web data from browser sessions
+- Sample datasets for validation: electronics, shopping, etc.
+
+🔹 **Preprocessing Methods:**
+- HTML cleaning
+- Tag filtering (price, title, rating, etc.)
+- Semantic chunking (for embeddings/memory)
+
+🔹 **Storage / Pipeline Setup:**
+Structured results saved as:
+- CSV via Pandas
+- JSON via Pydantic schemas
+- Task history stored in SQLite or Postgres
+- Task embeddings stored in VectorDB
